@@ -8,7 +8,7 @@ class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
   end
   
   test "list finished books in JSON" do
-    get '/finished_books', {} , { 'Accept' => Mime::JSON }
+    get '/api/finished_books', {} , { 'Accept' => Mime::JSON }
     
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
@@ -16,7 +16,7 @@ class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
   end
   
   test "listing finished books in XML" do
-    get '/finished_books', {}, { 'Accept' => Mime::XML }
+    get '/api/finished_books', {}, { 'Accept' => Mime::XML }
     
     assert_equal 200, response.status
     assert_equal Mime::XML, response.content_type 
