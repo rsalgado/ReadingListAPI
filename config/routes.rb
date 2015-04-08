@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     resources :books
     resources :finished_books
     resources :genres
+    
+    resources :reports, only: :create
   end
 end
