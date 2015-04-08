@@ -1,7 +1,7 @@
 class ReportJob < ActiveJob::Base
   queue_as :default
 
-  def perform(*args)
-    Report.generate
+  def perform(book)
+    Report.generate(book)
   end
 end

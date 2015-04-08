@@ -3,7 +3,7 @@ module Api
     skip_before_action :verify_authenticity_token
 
     def create
-      ReportJob.perform_later
+      ReportJob.perform_later(Book.last)
       head 202
     end
 
