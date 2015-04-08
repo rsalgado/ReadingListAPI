@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406035706) do
+ActiveRecord::Schema.define(version: 20150408184803) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150406035706) do
     t.integer  "genre_id"
     t.string   "amazon_id"
   end
+
+  add_index "books", ["genre_id"], name: "index_books_on_genre_id"
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
