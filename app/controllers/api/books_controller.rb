@@ -10,8 +10,8 @@ module Api
 
     def create
       book = Book.new(book_params)
-
       if book.save
+        Books.new_review(book).deliver_later
         render json: book, status: 201, location: [:api, book]
       else
         render json: book.errors, status: 422
